@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ToDos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>ToDos</h1>
+
+    {% for todo in todos %}
+        <li> {{ todo }} </li>
+    {% endfor %}
+
+    <form method="POST">
+        {{ template_form.hidden_tag() }}
+        <p>
+            {{ template_form.todo.label }}
+            {{ template_form.todo() }}
+        </p>
+        <p>{{ template_form.sumbit }}</p>
+    </form>
+
+
+</body>
+</html>
